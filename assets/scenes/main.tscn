@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/scenes/card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scripts/h_max_control.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/main.gd" type="Script" id=3]
+[ext_resource path="res://assets/res/fonts/droid_sans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/scripts/cards.gd" type="Script" id=5]
+[ext_resource path="res://assets/res/img/play.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 960 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.905882, 0.741176, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MobileArea" type="Control" parent="CenterContainer"]
+margin_right = 640.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 640, 960 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/MobileArea"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.905882, 0.741176, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TBtn_NewGame" type="TextureButton" parent="CenterContainer/MobileArea"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 32.0
+grow_horizontal = 2
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Status" type="Label" parent="CenterContainer/MobileArea"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -64.0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 84 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Dev" type="Label" parent="CenterContainer/MobileArea"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+custom_fonts/font = SubResource( 2 )
+text = "DEV: DMITRIY DERBIN (dimderbin@mail.ru)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Log" type="Label" parent="CenterContainer/MobileArea"]
+visible = false
+self_modulate = Color( 1, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 76.0
+margin_top = 236.0
+margin_right = 564.0
+margin_bottom = 724.0
+rect_min_size = Vector2( 488, 488 )
+columns = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card1" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 160.0
+
+[node name="Card2" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 160.0
+
+[node name="Card3" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 160.0
+
+[node name="Card4" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 164.0
+margin_right = 160.0
+margin_bottom = 324.0
+
+[node name="Card5" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 164.0
+margin_top = 164.0
+margin_right = 324.0
+margin_bottom = 324.0
+
+[node name="Card6" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 328.0
+margin_top = 164.0
+margin_right = 488.0
+margin_bottom = 324.0
+
+[node name="Card7" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 328.0
+margin_right = 160.0
+margin_bottom = 488.0
+
+[node name="Card8" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 164.0
+margin_top = 328.0
+margin_right = 324.0
+margin_bottom = 488.0
+
+[node name="Card9" parent="CenterContainer/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 328.0
+margin_top = 328.0
+margin_right = 488.0
+margin_bottom = 488.0
+[connection signal="pressed" from="CenterContainer/MobileArea/TBtn_NewGame" to="." method="_on_Btn_NewGame_pressed"]
